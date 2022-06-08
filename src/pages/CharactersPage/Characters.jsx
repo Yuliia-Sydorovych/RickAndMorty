@@ -7,12 +7,23 @@ import Logo from '../../assets/images/logo.png';
 import Pagination from './Pagination/Pagination';
 import styles from './Characters.module.scss';
 
+const getCurrentPage = () => {
+    
+    let currentPage = localStorage.getItem('currentPage');
+
+    if (currentPage) {
+        return JSON.parse(localStorage.getItem('currentPage'));
+    } else {
+        return;
+    }
+};
+
 const Characters = () => {
 
     const [filtred, setFiltred] = useState([]);
     const [choose, setChoose] = useState('');
     const [parameter, setParameter] = useState();
-    const [page, setPage] = useState();
+    const [page, setPage] = useState(getCurrentPage());
     const [totalPage, setTotalPage] = useState(0);
 
     const handleClick = num => {
@@ -25,7 +36,7 @@ const Characters = () => {
             .then(response => {
                 setFiltred(response.data.results);
                 setTotalPage(response.data.info.pages);
-                localStorage.setItem('currentPage', JSON.stringify(page));
+                localStorage.setItem('currentPage', page);
             })
             .catch(err => {
                 console.log(err);
