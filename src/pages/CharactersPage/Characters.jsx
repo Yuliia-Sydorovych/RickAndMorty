@@ -4,13 +4,13 @@ import routes from '../../configs/routes';
 import { Link } from 'react-router-dom';
 import Cross from '../../assets/images/cross.png';
 import Logo from '../../assets/images/logo.png';
-import PaginationComponent from './Pagination/Pagination';
+import Pagination from './Pagination/Pagination';
 import styles from './Characters.module.scss';
 
 const Characters = () => {
 
     const [filtred, setFiltred] = useState([]);
-    const [choose, setChoose] = useState();
+    const [choose, setChoose] = useState('');
     const [parameter, setParameter] = useState();
     const [page, setPage] = useState();
     const [totalPage, setTotalPage] = useState(0);
@@ -34,7 +34,6 @@ const Characters = () => {
 
     const filterElements = (el) => {
         setChoose(el);
-        console.log(choose);
         setParameter('name');
     }
 
@@ -49,6 +48,7 @@ const Characters = () => {
             setParameter('');
             setFiltred([]);
             setPage(1);
+            setChoose('');
         }
     }
 
@@ -64,9 +64,10 @@ const Characters = () => {
                     </div>
                     <input
                         type="text"
+                        name='search'
                         placeholder="type name ..."
                         onChange={filterHandle}
-                        name='search'
+                        value={choose}
                     />
                     <div className={styles.characters__nameFilter}>
                         Reset
@@ -95,7 +96,7 @@ const Characters = () => {
                         )
                     }
                 </div>
-                <PaginationComponent totalPage={totalPage} handleClick={handleClick}/>
+                <Pagination totalPage={totalPage} handleClick={handleClick}/>
             </div>
         </div>
     ); 
