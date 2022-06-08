@@ -38,7 +38,7 @@ const Character = () => {
                         Location: {person.location.name}
                     </div>
                     <div>
-                        First episode: {person.episode[0].slice(-1)} episode
+                        First appearance: {person.episode[0].slice(-1)} episode
                     </div>
                     <div>
                         Created: {new Date(person.created).toLocaleDateString()}
