@@ -1,0 +1,91 @@
+@import '../../consts/variables.scss';
+
+.characters {
+    @include flex();
+    justify-content: center;
+    align-items: center;
+
+    &__content {
+        @include flex($flexDirection: row);
+        justify-content: center;
+
+        input {
+            height: 20px;
+        }
+    }
+
+    &__cross {
+        height: 25px;
+    }
+
+    &__nameFilter {
+        margin: 0 10px 10px 30px;
+        text-transform: uppercase;;
+        color: $backCard;
+        -webkit-text-stroke: 1px $fontBlue;
+    }
+
+    &__character {
+        @include flex($flexDirection: row);
+        justify-content: center;
+    }
+    
+    &__card {
+        height: 300px;
+        width: 240px;
+        @include flex();
+        background-color: $backCard;
+        border: 1px solid $fontBlue;
+        margin: 0 5px 5px 0;
+        border-radius: $borderRadius;
+        text-decoration: none;
+    }
+
+    &__img {
+        
+        & > img {
+            height: 240px;
+        }
+    }
+
+    &__nameCharacter {
+        @include flex();
+        justify-content: center;
+        text-align: center;
+        font-size: 17px;
+        color: $fontBlue;
+    }
+
+    &__like, &__dislike {
+        background-color: red;
+    }
+
+    &__notActiveLike, &__notActiveDislike {
+        background-color: gray;
+    }
+}
+@media screen and (max-width: 600px) {
+    
+    .characters {
+
+        &__logo {
+            & > img {
+                width: 200px;
+                margin-top: 50px;
+            }
+        }
+        
+        &__nameCharacter {
+            font-size: 15px;
+        }
+
+        &__content {
+            flex-direction: column;
+            align-items: center;
+
+            button {
+                width: 150px;
+            }
+        }
+    }
+}

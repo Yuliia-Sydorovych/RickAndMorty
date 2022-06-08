@@ -1,0 +1,81 @@
+@import '../../consts/variables.scss';
+
+.profile {
+    height: 100%;
+    @include flex();
+    justify-content: center;
+    align-items: center;
+    
+    &__back {
+        height: 25px;
+        width: 50px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        text-align: center;
+        background-color: $backCard;
+        text-decoration: none;
+        border-radius: 5px;
+        color: $fontBlue;
+    }
+
+    &__title {
+        color: $fontBlue;
+        font-size: 35px;
+        background-color: $backCard;
+        width: fit-content;
+        height: 55px;
+        margin-bottom: 10px;
+        text-align: center;
+        border-radius: 20px;
+        padding: 10px;
+    }
+
+    &__content {
+        @include flex($flexDirection: row);
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__img {
+        & > img {
+            height: 500px;
+            border-radius: 50%;
+        }
+    }
+
+    &__info {
+        margin-left: 20px;
+        color: $fontBlue;
+        border-radius: 10px;
+        background-color: $backCard;
+        padding: 10px;
+    }   
+}
+
+@media screen and (max-width: 600px) {
+
+    .profile {
+        &__title {
+            font-size: 25px;
+            height: 40px;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+    
+        &__content {
+            flex-direction: column;
+        }
+
+        &__img {
+            & > img {
+                height: 200px;
+            }
+        }
+
+        &__info {
+            width: 200px;
+            margin-left: 0;
+        }
+    }
+}

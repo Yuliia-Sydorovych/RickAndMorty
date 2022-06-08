@@ -1,0 +1,30 @@
+$fontBlue: rgb(5, 2, 29);
+$fontYellow: #d6db6b;
+$backLight: #86a1a7;
+$backCard:#dfe48f;
+$backGroundImage: url('../assets/images/planets.jpg');
+$borderRadius: 5px;
+
+%fontFamily {
+  font-family: 'Creepster', cursive;
+  font-weight: bold;
+  color: $fontBlue;
+}
+
+%buttonStyle {
+  @extend %fontFamily;
+  background-color: $backCard;
+  border: 1px solid $fontBlue;
+  border-radius: $borderRadius;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  height: 30px;
+  z-index: 3;
+}
+
+@mixin flex($flexDirection: column) {
+  display: flex;
+  flex-direction: $flexDirection;
+  flex-wrap: wrap;
+}

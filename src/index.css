@@ -1,13 +1,17 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: 'Creepster';
+  src: 'https://fonts.googleapis.com/css2?family=Creepster&family=Hanalei+Fill&display=swap';
+  font-weight: normal;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html, body, #root {
+  background: url('../src/assets/images/planets.jpg');
+  height: 100%;
+  font-family: 'Creepster', cursive;
+  font-weight: 700;
 }
+
+body {
+  margin: 0;
+}
+
