@@ -87,7 +87,7 @@ const Characters = () => {
                 </div>
                 <div className={styles.characters__character}>
                     {filtred &&
-                        filtred.map((c, i) => 
+                        filtred.map(c => 
                             <div key={c.id}>
                                 <Link 
                                     style={{ textDecoration: 'none' }}
